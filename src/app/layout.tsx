@@ -1,6 +1,10 @@
-
-import { Html, Head, Main, NextScript } from 'next/document'
+"use client"
+import { useEffect, useState } from 'react'
 import './globals.css'
+// import SplashScreen from "../components/SplashScreen"
+import { usePathname } from "next/navigation"
+
+
 
 export const metadata = {
   title: 'VectorCrop',
@@ -12,14 +16,33 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+
+  // const pathname = usePathname()
+  // const isHome = pathname === "/"
+  // const [isLoading, setIsLoading] = useState(isHome)
+
+  // useEffect(() => {
+  //   if (isLoading) {
+  //     return
+  //   }
+  // }, [isLoading])
+
+
   return (
     <html lang="en">
       <head>
+      <link rel="shortcut icon" href="favicon.ico" />
       <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com"  />
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,700;1,400&family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100&display=swap" rel="stylesheet"/>
 </head>
-      <body>{children}</body>
+      <body>
+        
+        <>
+        {children}
+        </>
+       
+        </body>
     </html>
   )
 }
